@@ -122,19 +122,6 @@ print(f"Dataset contains {len(clips_df)} clips from {clips_df['model'].nunique()
 print(f"Emotions covered: {sorted(clips_df['emotion'].unique())}")
 ```
 
-### Basic Analysis
-
-```python
-# Model performance summary
-model_stats = clips_df.groupby('model').agg({
-    'valence': ['mean', 'std'],
-    'arousal': ['mean', 'std']
-}).round(3)
-
-# Emotion distribution
-emotion_counts = clips_df['emotion'].value_counts()
-```
-
 ## Citation
 
 If you use this dataset in your research, please cite:
