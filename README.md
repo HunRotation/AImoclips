@@ -8,7 +8,7 @@ This benchmark addresses the critical question of emotion conveyance in AI-gener
 - **991 music clips** across 12 distinct emotions
 - **6 TTM models** including both open-source and commercial systems
 - **Human annotations** with valence-arousal ratings from multiple evaluators
-- **Ground truth emotions** with established valence-arousal coordinates
+- **Reference emotion intents** with established valence-arousal coordinates
 
 The dataset enables researchers to evaluate and compare TTM models based on their ability to generate music that successfully conveys intended emotions to human listeners.
 
@@ -19,7 +19,7 @@ AImoclips/
 ├── README.md                      # This file
 ├── clips_metadata.csv             # Main dataset with clip ratings and metadata
 ├── ratings_metadata.csv           # Individual ratings from each annotator
-├── emotion_intents_metadata.csv   # Ground truth emotion coordinates
+├── emotion_intents_metadata.csv   # Reference emotion coordinates
 └── music_clips/                   # Audio files organized by model
     ├── AudioLDM2/                 # 168 clips from AudioLDM2
     │   ├── AudioLDM2_angry_1.wav
@@ -96,8 +96,8 @@ This file contains the reference valence-arousal coordinates for each emotion, e
 |--------|------|-------------|
 | `quadrant` | string | Valence-arousal quadrant (hv_ha, lv_ha, lv_la, hv_la) |
 | `emotion` | string | Emotion intent |
-| `gt_valence` | float | Ground truth valence coordinate (1-9 scale) |
-| `gt_arousal` | float | Ground truth arousal coordinate (1-9 scale) |
+| `gt_valence` | float | Reference valence coordinate (1-9 scale) |
+| `gt_arousal` | float | Reference arousal coordinate (1-9 scale) |
 
 **Quadrant codes:**
 - `hv_ha`: High Valence, High Arousal
@@ -129,7 +129,7 @@ clips_df = pd.read_csv('clips_metadata.csv')
 # Load individual annotator ratings
 ratings_df = pd.read_csv('ratings_metadata.csv')
 
-# Load ground truth emotion coordinates  
+# Load reference emotion coordinates  
 emotions_df = pd.read_csv('emotion_intents_metadata.csv')
 
 print(f"Dataset contains {len(clips_df)} clips from {clips_df['model'].nunique()} models")
