@@ -18,6 +18,7 @@ The dataset enables researchers to evaluate and compare TTM models based on thei
 AImoclips/
 ├── README.md                      # This file
 ├── clips_metadata.csv             # Main dataset with clip ratings and metadata
+├── ratings_metadata.csv           # Individual ratings from each annotator
 ├── emotion_intents_metadata.csv   # Ground truth emotion coordinates
 └── music_clips/                   # Audio files organized by model
     ├── AudioLDM2/                 # 168 clips from AudioLDM2
@@ -91,6 +92,17 @@ This is the main dataset file containing human ratings and metadata for all 991 
 
 This file contains the ground truth valence-arousal coordinates for each emotion, establishing the intended emotional targets.
 
+### ratings_metadata.csv
+
+This file contains individual valence and arousal ratings from each human annotator for every audio clip, with anonymized user identifiers.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `user` | string | Anonymized participant identifier (P1, P2, ..., P111) |
+| `audio_file` | string | Filename of the audio clip |
+| `valence` | integer | Valence rating from the annotator (1-9 scale) |
+| `arousal` | integer | Arousal rating from the annotator (1-9 scale) |
+
 | Column | Type | Description |
 |--------|------|-------------|
 | `quadrant` | string | Valence-arousal quadrant (hv_ha, lv_ha, lv_la, hv_la) |
@@ -115,11 +127,15 @@ import pandas as pd
 # Load clip ratings and metadata
 clips_df = pd.read_csv('clips_metadata.csv')
 
+# Load individual annotator ratings
+ratings_df = pd.read_csv('ratings_metadata.csv')
+
 # Load ground truth emotion coordinates  
 emotions_df = pd.read_csv('emotion_intents_metadata.csv')
 
 print(f"Dataset contains {len(clips_df)} clips from {clips_df['model'].nunique()} models")
 print(f"Emotions covered: {sorted(clips_df['emotion'].unique())}")
+print(f"Individual ratings: {len(ratings_df)} from {ratings_df['user'].nunique()} annotators")
 ```
 
 ## Contact
