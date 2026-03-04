@@ -90,18 +90,7 @@ This is the main dataset file containing human ratings and metadata for all 991 
 
 ### emotion_intents_metadata.csv
 
-This file contains the ground truth valence-arousal coordinates for each emotion, establishing the intended emotional targets.
-
-### ratings_metadata.csv
-
-This file contains individual valence and arousal ratings from each human annotator for every audio clip, with anonymized user identifiers.
-
-| Column | Type | Description |
-|--------|------|-------------|
-| `user` | string | Anonymized participant identifier (P1, P2, ..., P111) |
-| `audio_file` | string | Filename of the audio clip |
-| `valence` | integer | Valence rating from the annotator (1-9 scale) |
-| `arousal` | integer | Arousal rating from the annotator (1-9 scale) |
+This file contains the reference valence-arousal coordinates for each emotion, establishing the intended emotional targets.
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -116,6 +105,16 @@ This file contains individual valence and arousal ratings from each human annota
 - `lv_la`: Low Valence, Low Arousal
 - `hv_la`: High Valence, Low Arousal
 
+### ratings_metadata.csv
+
+This file contains individual valence and arousal ratings from each human annotator for every audio clip, with anonymized user identifiers.
+
+| Column | Type | Description |
+|--------|------|-------------|
+| `user` | string | Anonymized participant identifier (P1, P2, ..., P111) |
+| `audio_file` | string | Filename of the audio clip |
+| `valence` | integer | Valence rating from the annotator (1-9 scale) |
+| `arousal` | integer | Arousal rating from the annotator (1-9 scale) |
 
 ## Usage
 
