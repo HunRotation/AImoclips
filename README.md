@@ -122,18 +122,8 @@ print(f"Dataset contains {len(clips_df)} clips from {clips_df['model'].nunique()
 print(f"Emotions covered: {sorted(clips_df['emotion'].unique())}")
 ```
 
-## Citation
-
-If you use this dataset in your research, please cite:
-
-```bibtex
-[Citation details to be added]
-```
-
-## License
-
-[License information to be added]
-
 ## Contact
 
-[Contact information to be added]
+If you have any issue with this dataset, feel free to contact here:
+
+rotation@kaist.ac.kr
