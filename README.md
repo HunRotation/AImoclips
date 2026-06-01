@@ -137,6 +137,12 @@ print(f"Emotions covered: {sorted(clips_df['emotion'].unique())}")
 print(f"Individual ratings: {len(ratings_df)} from {ratings_df['user'].nunique()} annotators")
 ```
 
+## License
+
+The AImoclips dataset is made available under the [Creative Commons Attribution 4.0 International (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/).
+
+The preprint describing this dataset is currently available on arXiv: [AImoclips: A Benchmark for Evaluating Emotion Conveyance in Text-to-Music Generation](https://arxiv.org/abs/2509.00813).
+
 ## Contact
 
 If you have any issue with this dataset, feel free to contact here:
