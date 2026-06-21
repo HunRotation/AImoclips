@@ -139,7 +139,7 @@ print(f"Individual ratings: {len(ratings_df)} from {ratings_df['user'].nunique()
 
 ## License
 
-The AImoclips dataset is made available under the [Creative Commons Attribution 4.0 International (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/).
+The AImoclips dataset is made available under the [Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License](https://creativecommons.org/licenses/by-nc/4.0/).
 
 The preprint describing this dataset is currently available on arXiv: [AImoclips: A Benchmark for Evaluating Emotion Conveyance in Text-to-Music Generation](https://arxiv.org/abs/2509.00813).
 
